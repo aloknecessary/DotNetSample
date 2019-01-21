@@ -60,7 +60,7 @@ platform: Any CPU
 
 
   # MSBuild verbosity level
-  verbosity: m 
+  verbosity: minimal 
   # quiet|minimal|normal|detailed
 
 
