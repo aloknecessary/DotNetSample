@@ -68,7 +68,7 @@ platform: Any CPU
 before_build:
  # Display .NET Core version
     - ps: dotnet --info 
-    - ps: cd $env:SolutionName
+    #- ps: cd $env:SolutionName
 # to run your custom scripts instead of automatic MSBuild
 build_script:
  dotnet build -v:m ./$env:SolutionName.sln
