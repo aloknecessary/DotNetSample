@@ -37,7 +37,7 @@ clone_depth: 5                      # clone entire repository history if not def
 # environment variables
 environment:
   Output_File_Name: WriteLines.txt
-  SolutionName: AppVeyor-Test.sln
+  SolutionName: .\AppVeyor-Test.sln
   ProjectName: .\ConsoleApp1.csproj
 
 #---------------------------------#
@@ -67,11 +67,13 @@ platform: Any CPU
 # scripts to run before build
 before_build:
  # Display .NET Core version
+    - ps: echo 'Starting build process..'
+    - ps: echo $env:SolutionName
     - ps: dotnet --info 
     #- ps: cd $env:SolutionName
 # to run your custom scripts instead of automatic MSBuild
 build_script:
- dotnet build -v:m ./$env:SolutionName
+ dotnet build -v:m $env:SolutionName
 # scripts to run after build (working directory and environment changes are persisted from the previous steps)
 after_build:
 
