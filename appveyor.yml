@@ -95,5 +95,5 @@ artifacts:
 
   # pushing a single file with environment variable in path and "Deployment name" specified
   - path: $(ProjectName)\bin\$(config)\$env:NetCoreTargetFramework\
-    name: ARTIFACT_ALOK_TEST_$(buildVersion)
+    name: ARTIFACT_ALOK_TEST___
 
