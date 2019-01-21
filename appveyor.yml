@@ -37,7 +37,7 @@ clone_depth: 5                      # clone entire repository history if not def
 # environment variables
 environment:
   Output_File_Name: WriteLines.txt
-  SolutionName: .\AppVeyor-Test.sln
+  SolutionName: AppVeyor-Test
   ProjectName: .\ConsoleApp1.csproj
 
 #---------------------------------#
@@ -72,7 +72,7 @@ before_build:
     #- ps: cd $env:SolutionName
 # to run your custom scripts instead of automatic MSBuild
 build_script:
- dotnet build -v:m .\AppVeyor-Test.sln
+ - ps: dotnet build -v:m ./$env:SolutionName.sln
 # scripts to run after build (working directory and environment changes are persisted from the previous steps)
 after_build:
 
@@ -88,12 +88,7 @@ before_package:
 
 artifacts:
 
-  # pushing a single file
-  - path: test.zip
-
   # pushing a single file with environment variable in path and "Deployment name" specified
   - path: MyProject\bin\$(configuration)
-    name: myapp
+    name: ARTIFACT_ALOK_TEST
 
-  # pushing entire folder as a zip archive
-  - path: logs
