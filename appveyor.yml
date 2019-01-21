@@ -67,13 +67,12 @@ platform: Any CPU
 # scripts to run before build
 before_build:
  # Display .NET Core version
-    - ps: echo 'Starting build process..'
-    - ps: echo $env:SolutionName
+    - ps: echo Starting build process..
     - ps: dotnet --info 
     #- ps: cd $env:SolutionName
 # to run your custom scripts instead of automatic MSBuild
 build_script:
- dotnet build -v:m $env:SolutionName
+ dotnet build -v:m .\AppVeyor-Test.sln
 # scripts to run after build (working directory and environment changes are persisted from the previous steps)
 after_build:
 
