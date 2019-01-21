@@ -38,7 +38,9 @@ clone_depth: 5                      # clone entire repository history if not def
 environment:
   Output_File_Name: WriteLines.txt
   SolutionName: AppVeyor-Test
-  ProjectName: .\ConsoleApp1.csproj
+  ProjectName: ConsoleApp1
+  config: Debug
+  
 
 #---------------------------------#
 #       build configuration       #
@@ -89,6 +91,6 @@ before_package:
 artifacts:
 
   # pushing a single file with environment variable in path and "Deployment name" specified
-  - path: MyProject\bin\$(configuration)
+  - path: $(ProjectName)\bin\$(configuration)\netcoreapp2.1\
     name: ARTIFACT_ALOK_TEST
 
