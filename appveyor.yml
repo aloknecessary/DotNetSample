@@ -96,5 +96,5 @@ artifacts:
 
   # pushing a single file with environment variable in path and "Deployment name" specified
   - path: $(ProjectName)\bin\$(config)\$(NetCoreTargetFramework)\
-    name: ARTIFACT_ALOK_TEST___$env:APPVEYOR_BUILD_VERSION__
+    name: ARTIFACT_ALOK_TEST___$(APPVEYOR_BUILD_VERSION)__
 
