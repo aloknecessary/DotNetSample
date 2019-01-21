@@ -91,6 +91,6 @@ before_package:
 artifacts:
 
   # pushing a single file with environment variable in path and "Deployment name" specified
-  - path: $(ProjectName)\bin\$(configuration)\netcoreapp2.1\
+  - path: $(ProjectName)\bin\$(config)\netcoreapp2.1\
     name: ARTIFACT_ALOK_TEST
 
